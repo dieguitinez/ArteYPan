@@ -35,6 +35,7 @@ const AppContent = () => {
   const [isStaffView, setIsStaffView] = useState(window.location.hash === '#staff');
   const [isOrderView, setIsOrderView] = useState(window.location.hash === '#pedido');
   const [activeModal, setActiveModal] = useState(null);
+  const [isStaffAuthenticated, setIsStaffAuthenticated] = useState(false);
 
   useEffect(() => {
     const handleHashChange = () => {
@@ -46,6 +47,46 @@ const AppContent = () => {
   }, []);
 
   if (isStaffView) {
+    if (!isStaffAuthenticated) {
+      return (
+        <div className="min-h-screen bg-flour flex items-center justify-center p-4">
+          <div className="bg-white p-8 rounded-3xl shadow-xl max-w-sm w-full text-center space-y-6">
+            <h2 className="font-serif font-black text-2xl text-crust">Acceso Empleados</h2>
+            <p className="text-sm text-crust-light">Introduce la contraseña para acceder al panel de pedidos.</p>
+            <input
+              type="password"
+              placeholder="Contraseña"
+              className="w-full p-3 rounded-xl bg-flour/50 border border-crust/10 focus:outline-none focus:border-olive text-center"
+              onKeyDown={(e) => {
+                if (e.key === 'Enter') {
+                  if (e.target.value === 'Panadero2026') {
+                    setIsStaffAuthenticated(true);
+                  } else {
+                    alert('Contraseña incorrecta');
+                  }
+                }
+              }}
+            />
+            <button
+              onClick={(e) => {
+                const input = e.target.previousSibling;
+                if (input.value === 'Panadero2026') {
+                  setIsStaffAuthenticated(true);
+                } else {
+                  alert('Contraseña incorrecta');
+                }
+              }}
+              className="w-full bg-olive text-white py-3 rounded-xl font-black tracking-widest uppercase text-xs hover:bg-olive-dark transition-colors"
+            >
+              Entrar al Panel
+            </button>
+            <button onClick={() => window.location.hash = ''} className="text-xs text-crust-light underline hover:text-crust transition-colors pt-2">
+              Volver a la tienda
+            </button>
+          </div>
+        </div>
+      );
+    }
     return <StaffPanel />;
   }
 

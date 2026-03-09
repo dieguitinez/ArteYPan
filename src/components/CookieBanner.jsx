@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { X, Settings, Check, Shield } from 'lucide-react';
+import { X, Settings, Check, Shield, Cookie } from 'lucide-react';
 
 export const CookieBanner = () => {
     const [isVisible, setIsVisible] = useState(false);
@@ -42,7 +42,7 @@ export const CookieBanner = () => {
                     className="fixed bottom-6 left-6 z-[9998] p-3 glass-card rounded-full shadow-lg border border-crust/10 hover:bg-crust hover:text-white transition-all transform hover:scale-110 group pointer-events-auto"
                     title="Configuración de Cookies"
                 >
-                    <Settings className="w-5 h-5 text-crust transition-colors group-hover:text-white" />
+                    <Cookie className="w-5 h-5 text-crust transition-colors group-hover:text-white" />
                 </button>
             )}
 
