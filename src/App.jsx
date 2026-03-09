@@ -78,7 +78,7 @@ const AppContent = () => {
             alt="Arte & Pan Logo"
             className="w-10 h-10 md:w-14 md:h-14 rounded-md object-cover shadow-sm border border-crust/10"
           />
-          <span className="text-xl md:text-2xl font-serif font-bold tracking-tight hidden sm:block text-crust-dark">Arte & Pan</span>
+          <span className="text-lg md:text-2xl font-serif font-bold tracking-tight text-crust-dark">Arte & Pan</span>
         </div>
         <div className="hidden lg:flex gap-8 text-[10px] font-black uppercase tracking-[0.2em] text-crust/70">
           <a href="#historia" className="hover:text-olive transition-colors underline-offset-4 hover:underline">Historia</a>
