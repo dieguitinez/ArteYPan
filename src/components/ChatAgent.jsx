@@ -36,7 +36,7 @@ export const ChatAgent = () => {
 
         try {
             // Pass history (before current message) and the new message
-            const apiKey = import.meta.env.VITE_GEMINI_API_KEY || import.meta.env.GEMINI_API_KEY;
+            const apiKey = import.meta.env.VITE_GEMINI_API_KEY || import.meta.env.artypan_GEMINI_API_KEY;
             const aiResponse = await generateChatResponse(messages, userText, apiKey);
             setIsTyping(false);
             setMessages((prev) => [...prev, { id: Date.now(), ...aiResponse }]);

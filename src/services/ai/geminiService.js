@@ -37,7 +37,7 @@ export const generateChatResponse = async (chatHistory, message, apiKey) => {
         if (!apiKey) {
             return {
                 role: 'assistant',
-                content: "🛠️ [Modo Simulación]: No detecto tu API Key. \n\n**IMPORTANTE**: Por seguridad de Vite, la variable en Vercel DEBE llamarse exactamente `VITE_GEMINI_API_KEY`. \n\nSi la llamaste `GEMINI_API_KEY` (sin el VITE_), la web no podrá leerla. Por favor, cámbiale el nombre en los ajustes de Vercel y vuelve a desplegar."
+                content: "🛠️ [Modo Simulación]: No detecto tu API Key. \n\n**IMPORTANTE**: Por seguridad, la variable en Vercel DEBE llamarse exactamente `artypan_GEMINI_API_KEY`. \n\nPor favor, cámbiale el nombre en los ajustes de Vercel y vuelve a desplegar."
             };
         }
         initializeGemini(apiKey);
