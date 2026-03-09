@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@theme {
+  --color-crust-light: #6D4C41;
+  --color-crust: #4A3728;
+  --color-crust-dark: #2D1E17;
+
+  --color-flour-light: #FFFFFF;
+  --color-flour: #FDFBF7;
+  --color-flour-dark: #F5F1E9;
+
+  --color-olive-light: #A5A58D;
+  --color-olive: #6B705C;
+  --color-olive-dark: #3F4238;
+
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Inter", sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-flour text-crust-dark font-sans antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-serif;
+  }
+}
+
+@utility glass-card {
+  background: rgba(253, 251, 247, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(107, 112, 92, 0.1);
+}
+
+@utility hero-gradient {
+  background: radial-gradient(circle at top right, rgba(107, 112, 92, 0.05), transparent 40%),
+    radial-gradient(circle at bottom left, rgba(74, 55, 40, 0.05), transparent 40%);
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes slow-zoom {
+  0% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-slow-zoom {
+  animation: slow-zoom 20s ease-in-out infinite alternate;
+}
