@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Package, Truck, CheckCircle, Clock, AlertCircle } from 'lucide-react';
+import { Package, Truck, CheckCircle, Clock, AlertCircle, ArrowLeft, Phone, MapPin } from 'lucide-react';
 import { useOrders } from '../context/OrderContext';
 import { createUberOrder } from '../api/uber';
 
@@ -45,6 +45,12 @@ export const StaffPanel = () => {
                         <p className="text-xs text-crust-light uppercase tracking-widest mt-1">Gestión de Pedidos en Tiempo Real</p>
                     </div>
                     <div className="flex gap-4">
+                        <button
+                            onClick={() => window.location.hash = ''}
+                            className="flex items-center gap-2 bg-white px-5 py-3 rounded-2xl shadow-sm border border-crust/5 text-[10px] font-black uppercase tracking-widest text-olive hover:bg-olive hover:text-white transition-all"
+                        >
+                            <ArrowLeft className="w-4 h-4" /> Volver a la Web
+                        </button>
                         <div className="bg-white p-3 rounded-2xl shadow-sm border border-crust/5 flex items-center gap-3">
                             <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
                             <span className="text-xs font-bold text-crust uppercase tracking-tighter">Sistema Online</span>
@@ -102,8 +108,8 @@ export const StaffPanel = () => {
                                 <div className="flex justify-between items-center text-sm">
                                     <span className="font-black text-crust-dark">{order.total ? `${order.total.toFixed(2)}€` : 'Pte. Calcular'}</span>
                                     <span className={`text-[10px] font-bold px-2 py-0.5 rounded-md uppercase tracking-tighter border italic ${order.status === 'pending'
-                                            ? 'text-amber-600 bg-amber-50 border-amber-100'
-                                            : 'text-green-600 bg-green-50 border-green-100'
+                                        ? 'text-amber-600 bg-amber-50 border-amber-100'
+                                        : 'text-green-600 bg-green-50 border-green-100'
                                         }`}>
                                         {order.status === 'pending' ? 'Validar Pedido' : 'Pagado'}
                                     </span>
