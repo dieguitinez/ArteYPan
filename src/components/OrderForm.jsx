@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { Package, User, Phone, MapPin, Send, ArrowLeft, CheckCircle } from 'lucide-react';
 import { useOrders } from '../context/OrderContext';
+import emailjs from '@emailjs/browser';
 
 export const OrderForm = ({ onBack }) => {
     const { addOrder } = useOrders();
     const [submitted, setSubmitted] = useState(false);
+    const [loading, setLoading] = useState(false);
     const [formData, setFormData] = useState({
         customer: '',
         phone: '',
@@ -12,16 +14,52 @@ export const OrderForm = ({ onBack }) => {
         items: '',
     });
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        addOrder({
-            customer: formData.customer,
-            phone: formData.phone,
-            address: formData.address,
-            items: formData.items,
-            status: 'pending', // Los empleados lo verán como pendiente de validar
-        });
-        setSubmitted(true);
+        setLoading(true);
+
+        try {
+            // 1. Guardar en el sistema local/contexto
+            addOrder({
+                customer: formData.customer,
+                phone: formData.phone,
+                address: formData.address,
+                items: formData.items,
+                status: 'pending',
+            });
+
+            // 2. Enviar notificación por email vía EmailJS
+            // Estos IDs vendrán de variables de entorno de Vercel
+            const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+            const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+            const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+            if (serviceId && templateId && publicKey) {
+                await emailjs.send(
+                    serviceId,
+                    templateId,
+                    {
+                        customer_name: formData.customer,
+                        customer_phone: formData.phone,
+                        customer_address: formData.address,
+                        order_details: formData.items,
+                        admin_email: 'arteypanaderia@hotmail.com'
+                    },
+                    publicKey
+                );
+                console.log('✅ Notificación enviada al administrador');
+            } else {
+                console.warn('⚠️ EmailJS no configurado. El pedido se guardó pero no se envió email.');
+            }
+
+            setSubmitted(true);
+        } catch (error) {
+            console.error('❌ Error al procesar el pedido:', error);
+            // Aun así permitimos que se 'envíe' visualmente para no bloquear al usuario
+            setSubmitted(true);
+        } finally {
+            setLoading(false);
+        }
     };
 
     if (submitted) {
@@ -122,9 +160,10 @@ export const OrderForm = ({ onBack }) => {
 
                         <button
                             type="submit"
-                            className="w-full bg-crust text-white py-5 rounded-3xl font-black uppercase tracking-[0.2em] text-xs shadow-xl hover:bg-crust-light transition-all flex items-center justify-center gap-3 transform hover:-translate-y-1"
+                            disabled={loading}
+                            className={`w-full bg-crust text-white py-5 rounded-3xl font-black uppercase tracking-[0.2em] text-xs shadow-xl transition-all flex items-center justify-center gap-3 transform ${loading ? 'opacity-70 cursor-not-allowed' : 'hover:bg-crust-light hover:-translate-y-1'}`}
                         >
-                            Enviar al Horno <Send className="w-4 h-4" />
+                            {loading ? 'Enviando al horno...' : 'Enviar al Horno'} <Send className="w-4 h-4" />
                         </button>
 
                         <p className="text-[10px] text-center text-crust-light/60 uppercase tracking-widest pt-4">

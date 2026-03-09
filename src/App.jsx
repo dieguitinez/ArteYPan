@@ -641,7 +641,7 @@ const AppContent = () => {
               <li><a href="#historia" className="hover:text-olive transition-colors">Nuestra Historia</a></li>
               <li><a href="#menu" className="hover:text-olive transition-colors">El Horno</a></li>
               <li><a href="#contacto" className="hover:text-olive transition-colors">Ubicación</a></li>
-              <li><a href="tel:+34633023275" className="hover:text-olive transition-colors">Pedidos Online</a></li>
+              <li><a href="#pedido" className="hover:text-olive transition-colors">Pedidos Online</a></li>
             </ul>
           </div>
 
@@ -655,7 +655,7 @@ const AppContent = () => {
         </div>
 
         <div className="max-w-6xl mx-auto mt-20 pt-8 border-t border-flour/10 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] uppercase font-bold tracking-widest text-flour/30">
-          <p>© 2026 Arte & Pan. C. San Luis, 13, bajo. La Línea.</p>
+          <p>© 2026 Arte & Pan. C. San Luis, 13, bajo. La Línea. | Created by <a href="https://nivo.partners" target="_blank" rel="noopener noreferrer" className="hover:text-flour transition-colors underline decoration-olive/30 underline-offset-4">Nivo Partners</a></p>
           <div className="flex flex-wrap justify-center md:justify-end gap-x-6 gap-y-3">
             <a href="#" onClick={(e) => { e.preventDefault(); setActiveModal('aviso'); }} className="hover:text-flour transition-colors">Aviso Legal</a>
             <a href="#" onClick={(e) => { e.preventDefault(); setActiveModal('condiciones'); }} className="hover:text-flour transition-colors">Condiciones Generales</a>
