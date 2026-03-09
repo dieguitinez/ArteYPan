@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "author": "David García",
+        "rating": 5,
+        "text": "La mejor hogaza de masa madre de toda La Línea. Se nota el cariño y las 24h de fermentación. ¡Y las japonesas son de otro mundo!",
+        "date": "Hace 2 semanas"
+    },
+    {
+        "id": 2,
+        "author": "Maria López",
+        "rating": 5,
+        "text": "Un trato excelente y productos de calidad superior. El olor a pan recién hecho nada más entrar es increíble. Muy recomendado.",
+        "date": "Hace 1 mes"
+    },
+    {
+        "id": 3,
+        "author": "Juanma R.",
+        "rating": 4,
+        "text": "Calidad-precio insuperable. Pan artesano de verdad, nada de precocinados. Hay que ir temprano porque vuelan las cosas.",
+        "date": "Hace 3 semanas"
+    },
+    {
+        "id": 4,
+        "author": "Elena M.",
+        "rating": 5,
+        "text": "Las japonesas rellenas de crema son espectaculares. El ambiente es super acogedor y el personal es encantador.",
+        "date": "Hace 2 meses"
+    }
+]
