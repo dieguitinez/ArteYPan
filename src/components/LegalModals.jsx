@@ -39,7 +39,7 @@ export const LegalModals = ({ activeModal, onClose }) => {
                                     <li><strong>Denominación Social:</strong> Arte & Pan S.L.</li>
                                     <li><strong>NIF/CIF:</strong> B-12345678</li>
                                     <li><strong>Domicilio Social:</strong> Calle San Luis, 13, bajo, 11300 La Línea de la Concepción, Cádiz (España)</li>
-                                    <li><strong>Correo Electrónico:</strong> info@arteypan.com</li>
+                                    <li><strong>Correo Electrónico:</strong> arteypanaderia@hotmail.com</li>
                                     <li><strong>Teléfono:</strong> +34 633 02 32 75</li>
                                 </ul>
                             </div>
@@ -87,7 +87,7 @@ export const LegalModals = ({ activeModal, onClose }) => {
 
                             <div>
                                 <h3 className="font-bold text-crust mb-2">5. Derechos del Usuario</h3>
-                                <p className="text-crust-light">Puedes ejercer tus derechos de acceso, rectificación, supresión, oposición, limitación del tratamiento y portabilidad dirigiéndote a nuestro correo electrónico: info@arteypan.com, adjuntando copia de tu DNI o documento equivalente.</p>
+                                <p className="text-crust-light">Puedes ejercer tus derechos de acceso, rectificación, supresión, oposición, limitación del tratamiento y portabilidad dirigiéndote a nuestro correo electrónico: arteypanaderia@hotmail.com, adjuntando copia de tu DNI o documento equivalente.</p>
                             </div>
                         </>
                     )}
@@ -118,7 +118,7 @@ export const LegalModals = ({ activeModal, onClose }) => {
 
                             <div>
                                 <h3 className="font-bold text-crust mb-2">5. Garantía Legal</h3>
-                                <p className="text-crust-light">Tanto la Ley española como Arte & Pan garantizan que los pedidos se entregan en perfecto estado de preparación térmica, visual y embalaje en las instalaciones de la tienda. En caso de incidencia severa (caja chafada o error grave en el producto imputable a nosotros), puedes contactarnos por teléfono o email (info@arteypan.com) máximo 2 horas post-entrega para una resolución adecuada u ofreciendo compensación equivalente a criterio de la tienda.</p>
+                                <p className="text-crust-light">Tanto la Ley española como Arte & Pan garantizan que los pedidos se entregan en perfecto estado de preparación térmica, visual y embalaje en las instalaciones de la tienda. En caso de incidencia severa (caja chafada o error grave en el producto imputable a nosotros), puedes contactarnos por teléfono o email (arteypanaderia@hotmail.com) máximo 2 horas post-entrega para una resolución adecuada u ofreciendo compensación equivalente a criterio de la tienda.</p>
                             </div>
                         </>
                     )}
