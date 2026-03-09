@@ -6,7 +6,7 @@ const OrderContext = createContext();
 
 export const OrderProvider = ({ children }) => {
     const [orders, setOrders] = useState([]);
-    const isFirebaseConfigured = !!import.meta.env.VITE_FIREBASE_API_KEY;
+    const isFirebaseConfigured = !!import.meta.env.artypan_FIREBASE_API_KEY || !!import.meta.env.VITE_FIREBASE_API_KEY;
 
     useEffect(() => {
         if (!isFirebaseConfigured) {
