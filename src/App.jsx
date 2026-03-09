@@ -71,35 +71,35 @@ const AppContent = () => {
   return (
     <div className="relative min-h-screen">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 glass-card px-6 py-4 flex justify-between items-center transition-all duration-300">
-        <div className="flex items-center gap-3">
+      <nav className="fixed top-0 left-0 right-0 z-50 glass-card px-4 py-2 md:px-6 md:py-4 flex justify-between items-center transition-all duration-300">
+        <div className="flex items-center gap-2 md:gap-3">
           <img
             src={logoImg}
             alt="Arte & Pan Logo"
-            className="w-14 h-14 rounded-md object-cover shadow-sm border border-crust/10"
+            className="w-10 h-10 md:w-14 md:h-14 rounded-md object-cover shadow-sm border border-crust/10"
           />
-          <span className="text-2xl font-serif font-bold tracking-tight hidden sm:block text-crust-dark">Arte & Pan</span>
+          <span className="text-xl md:text-2xl font-serif font-bold tracking-tight hidden sm:block text-crust-dark">Arte & Pan</span>
         </div>
-        <div className="hidden md:flex gap-8 text-[10px] font-black uppercase tracking-[0.2em] text-crust/70">
+        <div className="hidden lg:flex gap-8 text-[10px] font-black uppercase tracking-[0.2em] text-crust/70">
           <a href="#historia" className="hover:text-olive transition-colors underline-offset-4 hover:underline">Historia</a>
           <a href="#menu" className="hover:text-olive transition-colors underline-offset-4 hover:underline">El Horno</a>
           <a href="#contacto" className="hover:text-olive transition-colors underline-offset-4 hover:underline">Contacto</a>
         </div>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2 md:gap-4">
           <button
             onClick={() => setIsCartOpen(true)}
             className="relative p-2 text-crust hover:text-olive transition-all transform hover:scale-110"
           >
-            <ShoppingBag className="w-6 h-6" />
+            <ShoppingBag className="w-5 h-5 md:w-6 md:h-6" />
             {totalItems > 0 && (
-              <span className="absolute -top-1 -right-1 bg-olive text-white text-[10px] font-black w-5 h-5 rounded-full flex items-center justify-center animate-bounce">
+              <span className="absolute -top-1 -right-1 bg-olive text-white text-[10px] font-black w-4 h-4 md:w-5 md:h-5 rounded-full flex items-center justify-center animate-bounce">
                 {totalItems}
               </span>
             )}
           </button>
           <a
             href="tel:+34633023275"
-            className="bg-crust text-flour px-6 py-2 rounded-full text-[10px] font-black tracking-[0.2em] hover:bg-crust-light transition-all transform hover:scale-105 shadow-xl uppercase"
+            className="bg-crust text-flour px-4 py-2 md:px-6 md:py-2.5 rounded-full text-[9px] md:text-[10px] font-black tracking-[0.2em] hover:bg-crust-light transition-all transform hover:scale-105 shadow-xl uppercase"
           >
             Llamar
           </a>
@@ -183,16 +183,16 @@ const AppContent = () => {
             <div className="absolute inset-0 bg-gradient-to-t from-crust-dark/95 via-transparent to-black/30"></div>
           </div>
 
-          <div className="relative z-10 text-center px-6 max-w-5xl">
+          <div className="relative z-10 text-center px-6 max-w-5xl pt-20 md:pt-0">
             <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 backdrop-blur-md px-4 py-1.5 rounded-full mb-8">
               <span className="flex h-2 w-2 rounded-full bg-olive-light animate-pulse"></span>
               <span className="text-[10px] font-black uppercase tracking-[0.2em] text-flour-light">Artesanos Linenses</span>
             </div>
-            <h1 className="text-6xl md:text-8xl font-serif font-bold text-white mb-6 leading-tight drop-shadow-2xl">
+            <h1 className="text-5xl md:text-8xl font-serif font-bold text-white mb-6 leading-tight drop-shadow-2xl">
               Auténtico Pan <br />
               <span className="text-olive-light italic">Artesanal</span>
             </h1>
-            <p className="text-xl md:text-2xl text-flour/90 mb-10 max-w-2xl mx-auto font-light leading-relaxed drop-shadow-lg">
+            <p className="text-lg md:text-2xl text-flour/90 mb-10 max-w-2xl mx-auto font-light leading-relaxed drop-shadow-lg">
               Masa madre, 24 horas de fermentación y pasión por el oficio tradicional en La Línea de la Concepción.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
@@ -215,8 +215,8 @@ const AppContent = () => {
         </section>
 
         {/* OUR STORY / HISTORIA */}
-        <section id="historia" className="py-32 px-6 hero-gradient">
-          <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
+        <section id="historia" className="py-20 md:py-32 px-6 hero-gradient">
+          <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-10 md:gap-20 items-center">
             <div className="relative">
               <div className="absolute -inset-4 border-2 border-olive/10 rounded-3xl -z-10 rotate-3"></div>
               <img
@@ -224,14 +224,14 @@ const AppContent = () => {
                 alt="El equipo de Arte & Pan"
                 className="rounded-2xl shadow-2xl grayscale-[20%] hover:grayscale-0 transition-all duration-700 w-full object-cover"
               />
-              <div className="absolute -bottom-10 -right-10 glass-card p-8 rounded-3xl shadow-xl max-w-xs md:block hidden animate-float">
-                <Heart className="text-crust w-8 h-8 mb-4 fill-crust/10" />
-                <p className="text-sm font-medium italic text-crust-light">
+              <div className="absolute -bottom-6 -right-6 md:-bottom-10 md:-right-10 glass-card p-4 md:p-8 rounded-3xl shadow-xl max-w-[200px] md:max-w-xs animate-float">
+                <Heart className="text-crust w-6 h-6 md:w-8 md:h-8 mb-2 md:mb-4 fill-crust/10" />
+                <p className="text-[10px] md:text-sm font-medium italic text-crust-light">
                   "Arte & Pan nació en 2020 como un acto de resiliencia y amor por el pan de verdad."
                 </p>
-                <div className="mt-4 flex items-center gap-3">
+                <div className="mt-2 md:mt-4 flex items-center gap-3">
                   <div className="h-px grow bg-crust/10"></div>
-                  <span className="text-[10px] uppercase font-bold tracking-widest text-olive">Fundadores</span>
+                  <span className="text-[8px] md:text-[10px] uppercase font-bold tracking-widest text-olive">Fundadores</span>
                 </div>
               </div>
             </div>

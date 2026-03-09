@@ -51,7 +51,7 @@ export const ChatAgent = () => {
             {/* Floating Button with Label */}
             {/* Floating Button with Label */}
             <div className={`fixed bottom-6 right-6 z-50 flex items-center gap-3 transition-all duration-500 ${isOpen ? 'scale-0 opacity-0' : 'scale-100 opacity-100'}`}>
-                <div className="bg-olive text-white px-5 py-2.5 rounded-2xl shadow-2xl text-[10px] font-black uppercase tracking-[0.2em] transform hover:-translate-x-2 transition-transform cursor-pointer" onClick={() => setIsOpen(true)}>
+                <div className="bg-olive text-white px-5 py-2.5 rounded-2xl shadow-2xl text-[10px] font-black uppercase tracking-[0.2em] transform hover:-translate-x-2 transition-transform cursor-pointer hidden sm:block" onClick={() => setIsOpen(true)}>
                     Chatea con nosotros
                 </div>
                 <button
