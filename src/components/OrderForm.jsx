@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Package, User, Phone, MapPin, Send, ArrowLeft, CheckCircle } from 'lucide-react';
+import { Package, User, Phone, MapPin, Send, ArrowLeft, CheckCircle, Clock } from 'lucide-react';
 import { useOrders } from '../context/OrderContext';
 import emailjs from '@emailjs/browser';
 
@@ -10,7 +10,7 @@ export const OrderForm = ({ onBack }) => {
     const [formData, setFormData] = useState({
         customer: '',
         phone: '',
-        address: '',
+        pickupTime: '',
         items: '',
     });
 
@@ -23,7 +23,7 @@ export const OrderForm = ({ onBack }) => {
             addOrder({
                 customer: formData.customer,
                 phone: formData.phone,
-                address: formData.address,
+                address: `Recogida: ${formData.pickupTime}`,
                 items: formData.items,
                 status: 'pending',
             });
@@ -41,7 +41,7 @@ export const OrderForm = ({ onBack }) => {
                     {
                         customer_name: formData.customer,
                         customer_phone: formData.phone,
-                        customer_address: formData.address,
+                        customer_address: `Recogida en tienda: ${formData.pickupTime}`,
                         order_details: formData.items,
                         admin_email: 'arteypanaderia@hotmail.com'
                     },
@@ -132,15 +132,15 @@ export const OrderForm = ({ onBack }) => {
 
                         <div className="space-y-2">
                             <label className="text-[10px] uppercase font-black tracking-widest text-crust/50 flex items-center gap-2">
-                                <MapPin className="w-3 h-3" /> Dirección de Entrega (La Línea)
+                                <Clock className="w-3 h-3" /> ¿Cuándo pasarás a recogerlo?
                             </label>
                             <input
                                 required
                                 type="text"
                                 className="w-full bg-flour/30 border border-crust/10 rounded-2xl px-5 py-4 focus:outline-none focus:ring-2 focus:ring-olive/50 transition-all"
-                                placeholder="Calle, Número, Piso..."
-                                value={formData.address}
-                                onChange={(e) => setFormData({ ...formData, address: e.target.value })}
+                                placeholder="Ej. Hoy a las 11:30"
+                                value={formData.pickupTime}
+                                onChange={(e) => setFormData({ ...formData, pickupTime: e.target.value })}
                             />
                         </div>
 
