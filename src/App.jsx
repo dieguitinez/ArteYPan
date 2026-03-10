@@ -350,21 +350,21 @@ const AppContent = () => {
                 <h4 className="text-2xl font-serif font-bold text-crust-dark mb-6">El secreto está en el tiempo (y en la masa madre)</h4>
                 <div className="space-y-6">
                   <div className="flex gap-4 items-start">
-                    <span className="text-2xl">🍞</span>
+                    <Heart className="w-6 h-6 text-olive mt-1 shrink-0" />
                     <div>
                       <strong className="text-crust-dark block mb-1">Más digestivo y saludable</strong>
                       <p className="text-sm text-crust-light leading-relaxed">Gracias a nuestras 24 horas de fermentación, el gluten se descompone de forma natural. Un pan que no inflama y cuida tu estómago.</p>
                     </div>
                   </div>
                   <div className="flex gap-4 items-start">
-                    <span className="text-2xl">⏳</span>
+                    <Clock className="w-6 h-6 text-olive mt-1 shrink-0" />
                     <div>
                       <strong className="text-crust-dark block mb-1">Frescura que dura días</strong>
                       <p className="text-sm text-crust-light leading-relaxed">Olvídate del pan que parece chicle al día siguiente. Nuestra masa madre garantiza una corteza crujiente y una miga tierna por mucho más tiempo.</p>
                     </div>
                   </div>
                   <div className="flex gap-4 items-start">
-                    <span className="text-2xl">🌾</span>
+                    <Wheat className="w-6 h-6 text-olive mt-1 shrink-0" />
                     <div>
                       <strong className="text-crust-dark block mb-1">Ingredientes 100% reales</strong>
                       <p className="text-sm text-crust-light leading-relaxed">Harinas puras molidas a la piedra, agua, sal y mucha pasión. Cero aditivos, cero conservantes.</p>
