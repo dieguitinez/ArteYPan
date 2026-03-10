@@ -116,7 +116,7 @@ const AppContent = () => {
                 onKeyDown={(e) => {
                   if (e.key === 'Enter') {
                     const idInput = document.getElementById('admin-id');
-                    if (idInput.value === 'Gerencia' && e.target.value === 'ArteYPan2026') {
+                    if (idInput.value.toLowerCase() === 'gerencia' && e.target.value === 'ArteYPan2026') {
                       setIsAdminAuthenticated(true);
                     } else {
                       alert('Credenciales incorrectas');
@@ -129,7 +129,7 @@ const AppContent = () => {
               onClick={() => {
                 const idInput = document.getElementById('admin-id');
                 const passInput = document.getElementById('admin-pass');
-                if (idInput.value === 'Gerencia' && passInput.value === 'ArteYPan2026') {
+                if (idInput.value.toLowerCase() === 'gerencia' && passInput.value === 'ArteYPan2026') {
                   setIsAdminAuthenticated(true);
                 } else {
                   alert('Credenciales incorrectas');
