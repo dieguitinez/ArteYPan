@@ -18,7 +18,9 @@ export const CookieBanner = () => {
     }, []);
 
     const handleAcceptAll = () => {
-        localStorage.setItem('arteyPanCookieConsent', 'all');
+        const allAccepted = { necessary: true, analytics: true, marketing: true };
+        setPreferences(allAccepted);
+        localStorage.setItem('arteyPanCookieConsent', JSON.stringify(allAccepted));
         setIsVisible(false);
     };
 
