@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { ShoppingBag, ChevronRight, Star, MapPin, Phone, Instagram, Facebook, Menu as MenuIcon, X, Plus, Minus, Trash2, Heart, Award, ArrowRight, UserCircle, Wheat, PlusCircle, CheckCircle, Clock, Truck, Package, Coffee } from 'lucide-react';
+import { ShoppingBag, ChevronRight, Star, MapPin, Phone, Instagram, Facebook, Menu as MenuIcon, X, Plus, Minus, Trash2, Heart, Award, ArrowRight, UserCircle, Wheat, PlusCircle, CheckCircle, Clock, Truck, Package, Coffee, TrendingUp } from 'lucide-react';
 import { CartProvider, useCart } from './context/CartContext';
 import { OrderProvider, useOrders } from './context/OrderContext';
 import { StaffPanel } from './components/StaffPanel';
+import { AdminPanel } from './components/AdminPanel';
 import { CookieBanner } from './components/CookieBanner';
 import { ChatAgent } from './components/ChatAgent';
 import { LegalModals } from './components/LegalModals';
@@ -33,13 +34,16 @@ const AppContent = () => {
   const { cart, addToCart, removeFromCart, updateQuantity, subtotal, totalItems, isCartOpen, setIsCartOpen } = useCart();
   const { addOrder } = useOrders();
   const [isStaffView, setIsStaffView] = useState(window.location.hash === '#staff');
+  const [isAdminView, setIsAdminView] = useState(window.location.hash === '#admin');
   const [isOrderView, setIsOrderView] = useState(window.location.hash === '#pedido');
   const [activeModal, setActiveModal] = useState(null);
   const [isStaffAuthenticated, setIsStaffAuthenticated] = useState(false);
+  const [isAdminAuthenticated, setIsAdminAuthenticated] = useState(false);
 
   useEffect(() => {
     const handleHashChange = () => {
       setIsStaffView(window.location.hash === '#staff');
+      setIsAdminView(window.location.hash === '#admin');
       setIsOrderView(window.location.hash === '#pedido');
     };
     window.addEventListener('hashchange', handleHashChange);
@@ -88,6 +92,61 @@ const AppContent = () => {
       );
     }
     return <StaffPanel />;
+  }
+
+  if (isAdminView) {
+    if (!isAdminAuthenticated) {
+      return (
+        <div className="min-h-screen bg-flour flex items-center justify-center p-4">
+          <div className="bg-white p-8 rounded-3xl shadow-xl max-w-sm w-full text-center space-y-6">
+            <h2 className="font-serif font-black text-2xl text-crust">Acceso Gerencia</h2>
+            <p className="text-sm text-crust-light">ID de usuario y contraseña requeridos.</p>
+            <div className="space-y-3">
+              <input
+                type="text"
+                placeholder="ID de Usuario"
+                id="admin-id"
+                className="w-full p-3 rounded-xl bg-flour/50 border border-crust/10 focus:outline-none focus:border-olive text-center"
+              />
+              <input
+                type="password"
+                placeholder="Contraseña"
+                id="admin-pass"
+                className="w-full p-3 rounded-xl bg-flour/50 border border-crust/10 focus:outline-none focus:border-olive text-center"
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter') {
+                    const idInput = document.getElementById('admin-id');
+                    if (idInput.value === 'Gerencia' && e.target.value === 'ArteYPan2026') {
+                      setIsAdminAuthenticated(true);
+                    } else {
+                      alert('Credenciales incorrectas');
+                    }
+                  }
+                }}
+              />
+            </div>
+            <button
+              onClick={() => {
+                const idInput = document.getElementById('admin-id');
+                const passInput = document.getElementById('admin-pass');
+                if (idInput.value === 'Gerencia' && passInput.value === 'ArteYPan2026') {
+                  setIsAdminAuthenticated(true);
+                } else {
+                  alert('Credenciales incorrectas');
+                }
+              }}
+              className="w-full bg-olive text-white py-3 rounded-xl font-black tracking-widest uppercase text-xs hover:bg-olive-dark transition-colors"
+            >
+              Entrar al Dashboard
+            </button>
+            <button onClick={() => window.location.hash = ''} className="text-xs text-crust-light underline hover:text-crust transition-colors pt-2">
+              Volver a la tienda
+            </button>
+          </div>
+        </div>
+      );
+    }
+    return <AdminPanel />;
   }
 
   if (isOrderView) {
@@ -672,6 +731,9 @@ const AppContent = () => {
               </a>
               <a href="#staff" className="flex items-center gap-2 text-flour/40 hover:text-flour transition-colors text-xs font-bold uppercase tracking-widest mt-4">
                 <UserCircle className="w-4 h-4" /> Acceso Empleados
+              </a>
+              <a href="#admin" className="flex items-center gap-2 text-flour/40 hover:text-flour transition-colors text-xs font-bold uppercase tracking-widest mt-2">
+                <TrendingUp className="w-4 h-4" /> Acceso Gerencia
               </a>
             </div>
           </div>
