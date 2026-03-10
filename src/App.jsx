@@ -289,26 +289,25 @@ const AppContent = () => {
               <span className="text-[10px] font-black uppercase tracking-[0.2em] text-flour-light">Artesanos Linenses</span>
             </div>
             <h1 className="text-5xl md:text-8xl font-serif font-bold text-white mb-6 leading-tight drop-shadow-2xl">
-              Auténtico Pan <br />
-              <span className="text-olive-light italic">Artesanal</span>
+              El pan de verdad ha vuelto a <br />
+              <span className="text-olive-light italic">La Línea.</span>
             </h1>
             <p className="text-lg md:text-2xl text-flour/90 mb-10 max-w-2xl mx-auto font-light leading-relaxed drop-shadow-lg">
-              Masa madre, 24 horas de fermentación y pasión por el oficio tradicional en La Línea de la Concepción.
+              Masa madre, 24 horas de fermentación y manos artesanas. Sin prisas, sin procesos industriales. Solo el sabor que creías olvidado.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <button
                 onClick={() => setIsCartOpen(true)}
                 className="bg-flour text-crust-dark px-10 py-5 rounded-2xl font-black tracking-widest uppercase text-[10px] shadow-2xl hover:bg-white transition-all flex items-center justify-center gap-3 group"
               >
-                Hacer Pedido
+                Ver nuestros productos
                 <ShoppingBag className="w-5 h-5 group-hover:rotate-12 transition-transform" />
               </button>
               <a
-                href="#menu"
+                href="#contacto"
                 className="bg-white/5 backdrop-blur-sm border border-white/20 text-white px-10 py-5 rounded-2xl font-black tracking-widest uppercase text-[10px] hover:bg-white/10 transition-all flex items-center justify-center gap-2"
               >
-                Ver el Menú
-                <ChevronRight className="w-5 h-5" />
+                📍 Ven a visitarnos
               </a>
             </div>
           </div>
@@ -338,27 +337,41 @@ const AppContent = () => {
 
             <div className="space-y-8">
               <div>
-                <h2 className="text-olive font-bold text-xs uppercase tracking-[0.3em] mb-4">Nuestra Historia</h2>
+                <h2 className="text-olive font-bold text-xs uppercase tracking-[0.3em] mb-4">Nuestra Filosofía</h2>
                 <h3 className="text-5xl font-serif font-bold text-crust-dark leading-tight">
-                  Un Sueño Horneado a <br /> <span className="text-olive italic">Fuego Lento</span>
+                  No somos una franquicia.<br /> <span className="text-olive italic">Somos artesanos.</span>
                 </h3>
               </div>
               <p className="text-lg text-crust-light leading-relaxed">
-                Cristian Arango y Jessica Asencio fundaron Arte & Pan a finales de 2020, en un momento donde el mundo necesitaba volver a lo esencial. Su compromiso es innegociable: el respeto absoluto por el tiempo.
+                Detrás de Arte & Pan estamos Cristian y Jessica. Abrimos nuestras puertas con una misión muy clara: devolverle a La Línea el pan que alimenta y sienta bien. Mientras otros eligen la producción masiva, las prisas y las masas congeladas, nosotros elegimos madrugar. Amasamos a mano y respetamos los tiempos naturales del pan. Porque las cosas buenas, las que de verdad importan, toman su tiempo.
               </p>
-              <div className="grid grid-cols-2 gap-8 pt-6">
-                <div className="p-6 border-l-4 border-olive/20 bg-olive/5 rounded-r-2xl">
-                  <div className="text-3xl font-serif font-bold text-crust mb-1">24h</div>
-                  <div className="text-xs uppercase font-bold tracking-widest text-olive opacity-80">Fermentación</div>
-                </div>
-                <div className="p-6 border-l-4 border-crust/20 bg-crust/5 rounded-r-2xl">
-                  <div className="text-3xl font-serif font-bold text-crust mb-1">100%</div>
-                  <div className="text-xs uppercase font-bold tracking-widest text-crust opacity-80">Masa Madre</div>
+
+              <div className="mt-8 pt-8 border-t border-crust/10">
+                <h4 className="text-2xl font-serif font-bold text-crust-dark mb-6">El secreto está en el tiempo (y en la masa madre)</h4>
+                <div className="space-y-6">
+                  <div className="flex gap-4 items-start">
+                    <span className="text-2xl">🍞</span>
+                    <div>
+                      <strong className="text-crust-dark block mb-1">Más digestivo y saludable</strong>
+                      <p className="text-sm text-crust-light leading-relaxed">Gracias a nuestras 24 horas de fermentación, el gluten se descompone de forma natural. Un pan que no inflama y cuida tu estómago.</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-4 items-start">
+                    <span className="text-2xl">⏳</span>
+                    <div>
+                      <strong className="text-crust-dark block mb-1">Frescura que dura días</strong>
+                      <p className="text-sm text-crust-light leading-relaxed">Olvídate del pan que parece chicle al día siguiente. Nuestra masa madre garantiza una corteza crujiente y una miga tierna por mucho más tiempo.</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-4 items-start">
+                    <span className="text-2xl">🌾</span>
+                    <div>
+                      <strong className="text-crust-dark block mb-1">Ingredientes 100% reales</strong>
+                      <p className="text-sm text-crust-light leading-relaxed">Harinas puras molidas a la piedra, agua, sal y mucha pasión. Cero aditivos, cero conservantes.</p>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <p className="text-crust-light leading-relaxed font-light">
-                Utilizamos harinas molidas a la piedra y procesos de larga fermentación que garantizan un pan más nutritivo, digerible y, sobre todo, con el sabor de antaño. Es el movimiento "Slow Food" hecho realidad en La Línea.
-              </p>
             </div>
           </div>
         </section>
@@ -368,7 +381,7 @@ const AppContent = () => {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-20">
               <h2 className="text-olive font-bold text-xs uppercase tracking-[0.3em] mb-4">El Horno</h2>
-              <h3 className="text-5xl font-serif font-bold text-crust-dark mb-6">Nuestras Especialidades</h3>
+              <h3 className="text-5xl font-serif font-bold text-crust-dark mb-6">Del horno a tus manos</h3>
               <p className="text-crust-light max-w-2xl mx-auto text-lg font-light">
                 Cada día creamos piezas únicas siguiendo recetas tradicionales y toques modernos.
               </p>
@@ -377,9 +390,12 @@ const AppContent = () => {
             <div className="grid lg:grid-cols-2 gap-12">
               {/* Category 1: Panadería */}
               <div className="space-y-10">
-                <div className="flex items-center gap-4 mb-8">
-                  <Wheat className="text-olive w-8 h-8" />
-                  <h4 className="text-3xl font-serif font-bold text-crust underline decoration-olive/20 underline-offset-8">Panadería</h4>
+                <div className="mb-8">
+                  <div className="flex items-center gap-4 mb-3">
+                    <Wheat className="text-olive w-8 h-8" />
+                    <h4 className="text-3xl font-serif font-bold text-crust underline decoration-olive/20 underline-offset-8">Hogazas de Masa Madre</h4>
+                  </div>
+                  <p className="text-crust-light leading-relaxed">El Pan Nuestro de Cada Día. Rústico, de corteza tostada y miga alveolada. El acompañamiento perfecto para cualquier comida o un buen aceite de oliva.</p>
                 </div>
 
                 {/* Main banner: real hogaza artesanal photo */}
@@ -446,9 +462,12 @@ const AppContent = () => {
 
               {/* Category 2: Bollería & Tradición */}
               <div className="space-y-10">
-                <div className="flex items-center gap-4 mb-8">
-                  <Coffee className="text-olive w-8 h-8" />
-                  <h4 className="text-3xl font-serif font-bold text-crust underline decoration-olive/20 underline-offset-8">Bollería & Tradición</h4>
+                <div className="mb-8">
+                  <div className="flex items-center gap-4 mb-3">
+                    <Coffee className="text-olive w-8 h-8" />
+                    <h4 className="text-3xl font-serif font-bold text-crust underline decoration-olive/20 underline-offset-8">Bollería Fina</h4>
+                  </div>
+                  <p className="text-crust-light leading-relaxed">Un toque de Francia. Palmeras crujientes y croissants elaborados con pura mantequilla y paciencia, capa por capa.</p>
                 </div>
 
                 {/* Main banner: real butter croissant photo */}
@@ -517,9 +536,12 @@ const AppContent = () => {
 
             {/* Creaciones Especiales — full width section */}
             <div className="mt-20 pt-20 border-t border-crust/5">
-              <div className="flex items-center gap-4 mb-12">
-                <Award className="text-olive w-8 h-8" />
-                <h4 className="text-3xl font-serif font-bold text-crust underline decoration-olive/20 underline-offset-8">Creaciones Especiales</h4>
+              <div className="mb-12 max-w-2xl">
+                <div className="flex items-center gap-4 mb-3">
+                  <Award className="text-olive w-8 h-8" />
+                  <h4 className="text-3xl font-serif font-bold text-crust underline decoration-olive/20 underline-offset-8">La Japonesa Artesana</h4>
+                </div>
+                <p className="text-crust-light leading-relaxed text-lg">El Ícono de La Línea, Elevado. Hemos perfeccionado la receta tradicional. Fritura limpia, masa esponjosa y una crema pastelera casera que marca la diferencia. Tienes que probarla.</p>
               </div>
               <div className="grid md:grid-cols-2 gap-8">
                 {/* Croissants with toppings */}
@@ -631,8 +653,8 @@ const AppContent = () => {
             <div className="glass-card rounded-[3rem] overflow-hidden shadow-2xl grid lg:grid-cols-2">
               <div className="p-12 md:p-20 space-y-12">
                 <div>
-                  <h3 className="text-4xl font-serif font-bold text-crust-dark mb-4">Visítanos</h3>
-                  <p className="text-crust-light font-light">Ven a sentir el aroma del pan recién horneado.</p>
+                  <h3 className="text-4xl font-serif font-bold text-crust-dark mb-4 drop-shadow-sm">¿Te guardamos tu pan favorito?</h3>
+                  <p className="text-crust-light font-light leading-relaxed">Horneamos en cantidades limitadas para garantizar la máxima calidad. Pásate por nuestro obrador o llámanos para reservar tus hogazas y dulces antes de que se agoten.</p>
                 </div>
 
                 <div className="space-y-8">
@@ -643,7 +665,7 @@ const AppContent = () => {
                     <div>
                       <h4 className="font-bold text-crust uppercase tracking-widest text-xs mb-2">Dirección</h4>
                       <p className="text-lg text-crust-dark font-medium">C. San Luis, 13, bajo</p>
-                      <p className="text-sm text-crust-light">11300 La Línea de la Concepción, Cádiz</p>
+                      <p className="text-sm text-crust-light">11300 La Línea de la Concepción</p>
                     </div>
                   </div>
 
@@ -652,9 +674,9 @@ const AppContent = () => {
                       <Clock className="text-flour w-6 h-6" />
                     </div>
                     <div>
-                      <h4 className="font-bold text-crust uppercase tracking-widest text-xs mb-2">Horario Verificado</h4>
-                      <p className="text-lg text-crust-dark font-medium">Lunes a Sábado</p>
-                      <p className="text-sm text-crust-light">07:00 — 18:00</p>
+                      <h4 className="font-bold text-crust uppercase tracking-widest text-xs mb-2">Horario</h4>
+                      <p className="text-lg text-crust-dark font-medium">Lun-Jue: 07:00 - 18:00</p>
+                      <p className="text-sm text-crust-light">Viernes y Sábado: 07:00 - 14:30<br />Domingos: Cerrados</p>
                     </div>
                   </div>
 
@@ -663,9 +685,9 @@ const AppContent = () => {
                       <Phone className="text-flour w-6 h-6" />
                     </div>
                     <div>
-                      <h4 className="font-bold text-crust uppercase tracking-widest text-xs mb-2">Pedidos</h4>
+                      <h4 className="font-bold text-crust uppercase tracking-widest text-xs mb-2">Reservas</h4>
                       <a href="tel:+34633023275" className="text-lg text-crust-dark font-medium hover:text-olive transition-colors block">+34 633 02 32 75</a>
-                      <a href="tel:+34633023275" className="text-sm text-olive font-bold hover:underline">Llamar ahora</a>
+                      <a href="tel:+34633023275" className="inline-block mt-2 bg-crust text-flour px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-widest hover:bg-crust-light transition-colors">📞 Llamar para reservar</a>
                     </div>
                   </div>
                 </div>
@@ -683,7 +705,7 @@ const AppContent = () => {
                   <a
                     target="_blank"
                     rel="noopener noreferrer"
-                    href="https://maps.app.goo.gl/GDRwVn9VYtSotXmJA"
+                    href="https://maps.app.goo.gl/LMBNrbwGDRqfD8PT7"
                     className="inline-block bg-flour text-crust-dark px-8 py-3 rounded-xl font-bold hover:bg-white transition-all shadow-xl"
                   >
                     Cómo llegar
@@ -751,8 +773,9 @@ const AppContent = () => {
           <div>
             <h5 className="font-bold text-xs uppercase tracking-[0.2em] mb-8 text-olive">Horario</h5>
             <ul className="space-y-4 font-light opacity-80 text-sm">
-              <li>Lunes — Sábado <br /><span className="font-bold text-flour">07:00 - 18:00</span></li>
-              <li className="text-flour/30 italic">Domingos cerrados para descansar y preparar la masa madre.</li>
+              <li>Lun—Jue <span className="font-bold text-flour">07:00 - 18:00</span></li>
+              <li>Vie—Sáb <span className="font-bold text-flour">07:00 - 14:30</span></li>
+              <li className="text-flour/30 italic">Domingos cerrados.</li>
             </ul>
           </div>
         </div>
