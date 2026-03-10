@@ -594,7 +594,6 @@ const AppContent = () => {
           <div className="absolute bottom-0 left-0 w-96 h-96 bg-black/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/4"></div>
 
           <div className="max-w-4xl mx-auto text-center relative z-10">
-            <h2 className="text-flour/80 font-bold text-xs uppercase tracking-[0.3em] mb-4">Para Profesionales</h2>
             <h3 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-8 leading-tight">Catering y Suministro a Empresas</h3>
             <p className="text-lg md:text-2xl font-light text-white/95 leading-relaxed mb-10">
               Abastecemos a hoteles, restaurantes, cafeterías y eventos con el mejor pan de masa madre y bollería fina de La Línea. Sabemos que cuidas cada detalle de tu menú; tu pan debe estar a la misma altura. Fermentación de 24 horas y calidad artesanal para tu negocio.
