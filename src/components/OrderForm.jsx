@@ -7,6 +7,17 @@ export const OrderForm = ({ onBack }) => {
     const { addOrder } = useOrders();
     const [submitted, setSubmitted] = useState(false);
     const [loading, setLoading] = useState(false);
+    // Calcular la fecha/hora mínima (2 horas a partir de ahora)
+    const getMinPickupTime = () => {
+        const now = new Date();
+        now.setHours(now.getHours() + 2);
+
+        // Formato requerido por datetime-local: YYYY-MM-DDThh:mm
+        const offset = now.getTimezoneOffset() * 60000;
+        const localISOTime = (new Date(now - offset)).toISOString().slice(0, 16);
+        return localISOTime;
+    };
+
     const [formData, setFormData] = useState({
         customer: '',
         phone: '',
@@ -136,12 +147,15 @@ export const OrderForm = ({ onBack }) => {
                             </label>
                             <input
                                 required
-                                type="text"
-                                className="w-full bg-flour/30 border border-crust/10 rounded-2xl px-5 py-4 focus:outline-none focus:ring-2 focus:ring-olive/50 transition-all"
-                                placeholder="Ej. Hoy a las 11:30"
+                                type="datetime-local"
+                                min={getMinPickupTime()}
+                                className="w-full bg-flour/30 border border-crust/10 rounded-2xl px-5 py-4 focus:outline-none focus:ring-2 focus:ring-olive/50 transition-all font-sans"
                                 value={formData.pickupTime}
                                 onChange={(e) => setFormData({ ...formData, pickupTime: e.target.value })}
                             />
+                            <p className="text-[10px] uppercase font-bold tracking-widest text-olive/70 mt-1">
+                                * Se requieren mínimo 2 horas de preparación.
+                            </p>
                         </div>
 
                         <div className="space-y-2">
