@@ -591,12 +591,20 @@ const AppContent = () => {
         {/* AWARDS & RECOGNITION SECTION */}
         <section className="py-32 px-6 bg-crust-dark overflow-hidden">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-20">
+            <div className="text-center mb-16">
               <h2 className="text-olive-light font-bold text-xs uppercase tracking-[0.3em] mb-4">Reconocimientos</h2>
               <h3 className="text-5xl font-serif font-bold text-flour mb-6">Premios & Excelencia</h3>
-              <p className="text-flour/50 max-w-2xl mx-auto text-lg font-light">
+              <p className="text-flour/50 max-w-2xl mx-auto text-lg font-light mb-8">
                 La calidad de nuestro pan ha sido reconocida a nivel nacional e internacional. Cada premio es una promesa renovada de seguir mejorando.
               </p>
+              <a
+                href="https://www.8directo.com/la-linea/arte-y-pan-de-la-linea-ya-tiene-la-unica-estrella-de-la-panaderia-de-la-provincia_317596_102.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-olive hover:bg-olive-light text-white px-6 py-3 rounded-full font-bold uppercase tracking-widest text-xs transition-colors shadow-lg"
+              >
+                📰 Leer Entrevista en 8Directo <ChevronRight className="w-4 h-4" />
+              </a>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
