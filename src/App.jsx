@@ -588,6 +588,28 @@ const AppContent = () => {
           </div>
         </section>
 
+        {/* B2B CATERING SECTION */}
+        <section className="py-24 px-6 bg-olive text-white relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-black/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/4"></div>
+
+          <div className="max-w-4xl mx-auto text-center relative z-10">
+            <h2 className="text-flour/80 font-bold text-xs uppercase tracking-[0.3em] mb-4">Para Profesionales</h2>
+            <h3 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-8 leading-tight">Catering y Suministro a Empresas</h3>
+            <p className="text-lg md:text-2xl font-light text-white/95 leading-relaxed mb-10">
+              Abastecemos a hoteles, restaurantes, cafeterías y eventos con el mejor pan de masa madre y bollería fina de La Línea. Sabemos que cuidas cada detalle de tu menú; tu pan debe estar a la misma altura. Fermentación de 24 horas y calidad artesanal para tu negocio.
+            </p>
+            <a
+              href="https://wa.me/34633023275?text=Hola,%20me%20gustar%C3%ADa%20solicitar%20un%20presupuesto%20para%20mi%20empresa."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 bg-flour text-olive-dark px-10 py-5 rounded-2xl font-black tracking-widest uppercase text-[10px] md:text-xs shadow-2xl hover:bg-white transition-all hover:-translate-y-1"
+            >
+              Solicitar Presupuesto <ChevronRight className="w-5 h-5" />
+            </a>
+          </div>
+        </section>
+
         {/* AWARDS & RECOGNITION SECTION */}
         <section className="py-32 px-6 bg-crust-dark overflow-hidden">
           <div className="max-w-6xl mx-auto">
