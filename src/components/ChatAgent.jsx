@@ -161,8 +161,8 @@ export const ChatAgent = () => {
                 {/* Support Note with Hallucination Disclaimer */}
                 <div className="text-center py-2 px-4 bg-olive/5 border-t border-crust/5">
                     <p className="text-[9px] text-olive/60 uppercase tracking-widest leading-tight">
-                        Arti es una IA y puede cometer errores o tener delirios.
-                        <br />Verifica siempre la información importante.
+                        Arti es una IA y puede generar alucinaciones o imprecisiones.
+                        <br />Por favor, verifica siempre la información importante.
                     </p>
                 </div>
 
